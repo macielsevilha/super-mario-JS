@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+
+        * {
+            margin: 0;
+        }
+    
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 90vh;
+        }
+      .corpo {
+        height: 700px;
+        width: 1200px;
+
+        border: 2px solid rgb(5, 118, 159);
+        background-color: aqua;
+
+        position: relative;
+
+      }
+
+      #chao {
+        background-image: url('./images/floor2.png');
+        height: 100%;
+        width: 100%;
+        background-position: 0 700px;
+        position: absolute;
+      }
+
+    </style>
+ 
+</head>
+<body>
+
+    <div class="corpo" id="corpo">
+    </div>
+   
+    <script src="./app.js"></script>
+</body>
+</html>
