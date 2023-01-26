@@ -1,48 +1,88 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <style>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      display: flex;
+      justify-content: center;
+    }
 
-        * {
-            margin: 0;
-        }
-    
-        body {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 90vh;
-        }
-      .corpo {
-        height: 700px;
-        width: 1200px;
+    [wm-super-mario] {
+      width: 1200px;
+      height: 700px;
 
-        border: 2px solid rgb(5, 118, 159);
-        background-color: aqua;
+      background-color: #508DFF;
+      border: 2px solid #050505;
+      margin-top: 30px;
+      overflow: hidden;
 
-        position: relative;
+      position: relative;
+    }
+    .barreira {
+      position: absolute;
+      bottom: 0px;
+      left: 300px;
 
-      }
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      
+    }
+    .borda {
+      background-color: green;
+      border: 3px solid black;
 
-      #chao {
-        background-image: url('./images/floor2.png');
-        height: 100%;
-        width: 100%;
-        background-position: 0 700px;
-        position: absolute;
-      }
+      width: 120px;
+      height: 25px;
 
-    </style>
- 
+      background-image: url('./images/borda.png');
+      background-size: cover;
+      background-repeat: no-repeat;
+
+    }
+    .corpo {
+      background-color: rgb(20, 175, 0);
+      border: 2px solid black;
+
+      width: 100px;
+      height: 350px;
+
+      background-image: url('./images/corpo.png');
+      background-size: contain;
+    }
+    .chao {
+      position: absolute;
+      bottom: -5px;
+    }
+
+
+
+  </style>
+
 </head>
+
 <body>
 
-    <div class="corpo" id="corpo">
+  <div wm-super-mario>
+    <div class="barreira">
+      <div class="borda">
+
+      </div>
+      <div class="corpo">
+
+      </div>
+     
     </div>
-   
-    <script src="./app.js"></script>
+    <div class="chao">
+        <img src="./images/floor2.png" alt="">
+    </div>
+  </div>
+
+  <script src="./app.js"></script>
 </body>
+
 </html>
