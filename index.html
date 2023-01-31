@@ -9,60 +9,104 @@
     body {
       display: flex;
       justify-content: center;
+      align-items: center;
+      height: 95vh;
     }
 
     [wm-super-mario] {
-      width: 1200px;
-      height: 700px;
-
       background-color: #508DFF;
-      border: 2px solid #050505;
-      margin-top: 30px;
-      overflow: hidden;
+
+      width: 2200px;
+      height: 1200px;
+      border: 2px solid black;
 
       position: relative;
+      overflow: hidden;
     }
-    .barreira {
+
+    .clouds {
+      display: flex;
+      justify-content: space-around;
+      margin-top: 30px;
+    }
+
+    .cloud-1 {
+      background-image: url("./images/clouds.png");
+      background-size: contain;
+      background-repeat: no-repeat;
+      height: 200px;
+      width: 400px;
+    }
+
+    .cloud-2 {
+      background-image: url("./images/clouds.png");
+      background-size: contain;
+      background-repeat: no-repeat;
+      height: 400px;
+      width: 700px;
+    }
+
+    .cloud-3 {
+      background-image: url("./images/clouds.png");
+      background-size: contain;
+      background-repeat: no-repeat;
+      height: 100px;
+      width: 300px;
+    }
+
+    .pipe {
       position: absolute;
-      bottom: 0px;
-      left: 200px;
+      bottom: 48px;
+      left: 400px;
+
       display: flex;
       flex-direction: column;
       align-items: center;
-      
     }
-    .borda {
+
+    .edge {
       background-color: green;
-      border: 3px solid black;
+      height: 40px;
+      width: 180px;
+      border: 7px solid black;
 
-      width: 120px;
-      height: 25px;
-
-      background-image: url('./images/borda.png');
+      background-image: url("./images/borda.png");
       background-size: cover;
+    }
+
+    .body {
+      background-color: green;
+      height: 250px;
+      width: 150px;
+      border: 4px solid black;
+
+      background-image: url("./images/corpo.png");
+      background-size: cover;
+    }
+
+    .grass {
+      background-image: url("./images/grass.png");
       background-repeat: no-repeat;
-
-    }
-    .corpo {
-      background-color: rgb(20, 175, 0);
-      border: 2px solid black;
-
-      width: 100px;
-      height: 350px;
-
-      background-image: url('./images/corpo.png');
-      background-size: contain;
-    }
-    .chao {
       position: absolute;
-      bottom: -70px;
+      bottom: 0;
+      width: 100%;
+      height: 100px;
+
+      left: 1000px;
+
     }
 
-    .personagem {
+    .dwon {}
+
+    .floor {
+      height: 50px;
+      width: 100%;
+      background-image: url("./images/floor.png");
+      background-repeat: no-repeat;
+      background-size: cover;
       position: absolute;
-      bottom: 100px;
+      bottom: 0px;
     }
-
   </style>
 
 </head>
@@ -70,15 +114,28 @@
 <body>
 
   <div wm-super-mario>
-    <div class="personagem">
-      <img src="./images/mario.gif" alt="">
+    <div class="clouds">
+      <div class="cloud-1"></div>
+      <div class="cloud-2"></div>
+      <div class="cloud-3"></div>
     </div>
-    <div class="barreira" id="barreira">
-    
+    <div class="pipe">
+      <div class="edge">
+
+      </div>
+      <div class="body">
+
+      </div>
     </div>
-    <div class="chao">
-        <img src="./images/floor2.png" alt="">
+    <div class="dwon">
+      <div class="grass">
+
+      </div>
+      <div class="floor">
+
+      </div>
     </div>
+
   </div>
 
   <script src="./app.js"></script>
