@@ -21,16 +21,17 @@
       border: 2px solid black;
 
       position: relative;
-      /* overflow: hidden; */
+      overflow: hidden;
     }
 
     .nuvens {
       display: flex;
       justify-content: space-around;
       margin-top: 30px;
-
       position: absolute;
-      left: 2200px;
+
+      right: 0;
+
     }
 
     .nuvem-1 {
@@ -39,18 +40,20 @@
       background-repeat: no-repeat;
       height: 200px;
       width: 400px;
-
+      
       position: absolute;
+      top: 0px;
     }
 
     .nuvem-2 {
       background-image: url("./images/clouds.png");
       background-size: contain;
       background-repeat: no-repeat;
-      height: 400px;
+      height: 300px;
       width: 700px;
 
       position: absolute;
+      top: 150px;
     }
 
     .nuvem-3 {
@@ -61,16 +64,18 @@
       width: 300px;
 
       position: absolute;
+      top: 400px;
     }
 
     .barreira {
       position: absolute;
       bottom: 48px;
-      left: 400px;
-
+      
+      right: -1500px;
       display: flex;
       flex-direction: column;
       align-items: center;
+
     }
 
     .borda {
@@ -114,6 +119,11 @@
       position: absolute;
       bottom: 0px;
     }
+    .personagem {
+      position: absolute;
+      top: 900px;
+     
+    }
   </style>
 
 </head>
@@ -122,6 +132,9 @@
 
   <div wm-super-mario>
     <div class="nuvens">
+    </div>
+    <div class="">
+      <img class="personagem" src="./images/mario.gif" alt="">
     </div>
     <div class="barreira">
     </div>
