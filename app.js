@@ -72,14 +72,38 @@ function terraSuporte() {
   let elemento = document.getElementsByClassName('relva-chao')[0]
 
   let relva = criarJogo.criarElemento('div', 'relva')
-  let terra = criarJogo.criarElemento('div', 'terra')
+  let terra_1 = criarJogo.criarElemento('div', 'terra')
+  let terra_2 = criarJogo.criarElemento('div', 'terra')
+  let terra_3 = criarJogo.criarElemento('div', 'terra')
+  let terra_4 = criarJogo.criarElemento('div', 'terra')
+  let terra_5 = criarJogo.criarElemento('div', 'terra')
+
+  terra_2.style.left = '1300px'
+  terra_3.style.left = '2500px'
+  terra_4.style.left = '3800px'
+  terra_5.style.left = '5000px'
+ 
 
   elemento.appendChild(relva)
-  elemento.appendChild(terra)
+  elemento.appendChild(terra_1)
+  elemento.appendChild(terra_2)
+  elemento.appendChild(terra_3)
+  elemento.appendChild(terra_4)
+  elemento.appendChild(terra_5)
 
-  let e_1 = new AnimarItens(3, relva)
-  const PADRAO_LATERAL = 0
-  e_1.setX(PADRAO_LATERAL, 0)
+  let r_1 = new AnimarItens(3, relva)
+  let e_1 = new AnimarItens(3, terra_1)
+  let e_2 = new AnimarItens(3, terra_2)
+  let e_3 = new AnimarItens(3, terra_3)
+  let e_4 = new AnimarItens(3, terra_4)
+  let e_5 = new AnimarItens(3, terra_5)
+
+  r_1.setX(0, 0)
+  e_1.setX(0, 0)
+  e_2.setX(0, 0)
+  e_3.setX(0, 0)
+  e_4.setX(0, 0)
+  e_5.setX(0, 0)
 }
 terraSuporte()
 
