@@ -14,8 +14,8 @@ class AnimarItens {
 
   getX() {
     let valor = this.elemento.style.left.split('px')[0]
-    if(valor <= -4200) {
-      valor =  2200
+    if (valor <= -4200) {
+      valor = 2200
     }
     return valor
   }
@@ -24,21 +24,6 @@ class AnimarItens {
       X = this.getX() - this.DESLOCAMENTO
       this.elemento.style.left = `${X}px`
     }, VELOCIDADE);
-  }
-}
-
-class Personagem {
-  constructor(elemento) {
-    this.elemento = elemento
-  }
-  getX() {
-   return this.elemento.style.top.split('px')[0]
-  }
-  setX(x) {
-   this.elemento.style.top = `${x}px`
-  } 
-  cair(x) {
-   this.elemento.style.top = `${x}px`;
   }
 }
 
@@ -79,7 +64,7 @@ function barreiras() {
   let b_1 = new AnimarItens(3, elemento)
 
   const PADRAO_LATERAL = 0
-  b_1.setX(PADRAO_LATERAL, 5)
+  b_1.setX(PADRAO_LATERAL, 0)
 
 }
 barreiras()
@@ -91,49 +76,29 @@ function terraSuporte() {
 
   elemento.appendChild(relva)
   elemento.appendChild(terra)
+
+  let e_1 = new AnimarItens(3, relva)
+  const PADRAO_LATERAL = 0
+  e_1.setX(PADRAO_LATERAL, 0)
 }
 terraSuporte()
 
 function personagens() {
-  let mario = document.getElementsByClassName('personagem')[0]
+  const PERSONAGEM = document.getElementsByClassName('personagem')[0]
+  let elemento = document.createElement('img')
+  elemento.src = './images/mario.gif'
 
-  let personagem = new Personagem(mario)
-  
-  let pular = false
-  const DESLOCAMENTO = 3
-
-  window.onkeydown = () => pular = true
-  window.onkeyup = () => pular = false
-  
-  const jump = () => {
-    personagem.setX(900)
-    personagem.cair(900)
-    setInterval(() => {
-      let subir = personagem.getX() - DESLOCAMENTO
-   
-        personagem.setX(subir)
-      
-    }, 0);
-    setInterval(() => {
-      let cair = personagem.getX()
-      cair++
-      
-      if(pular == false) {  
-        // cair = Math.abs()
-        if(cair < 900) {
-          personagem.cair(cair)
-        }
-        
-      }
-    }, -1000);
-  
+  let evento = () => {
+    elemento.classList.add('cair')
+    elemento.classList.replace('cair', 'subir') 
     setTimeout(() => {
-      
-    }, 1000); 
+      elemento.classList.replace('subir', 'cair')
+    }, 1500);
   }
-  
-  document.addEventListener('keydown', jump);
 
-  
+  PERSONAGEM.appendChild(elemento)
+  window.addEventListener('keydown', evento)
+
+
 }
 personagens()

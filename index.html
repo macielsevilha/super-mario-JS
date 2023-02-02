@@ -81,7 +81,7 @@
     .borda {
       background-color: green;
       height: 40px;
-      width: 180px;
+      width: 150px;
       border: 7px solid black;
 
       background-image: url("./images/borda.png");
@@ -90,8 +90,8 @@
 
     .corpo {
       background-color: green;
-      height: 250px;
-      width: 150px;
+      height: 150px;
+      width: 130px;
       border: 4px solid black;
 
       background-image: url("./images/corpo.png");
@@ -121,8 +121,80 @@
     }
     .personagem {
       position: absolute;
-      top: 900px;
+      bottom: 50px;
      
+    }
+    .subir {
+      position: absolute;
+      animation: mario-subir-animacao 1500ms ease-out;
+    }
+
+    @keyframes mario-subir-animacao {
+      0% {
+        bottom: 20px;
+      }
+      5% {
+        bottom: 50px;
+      }
+      10% {
+        bottom: 90px;
+      }
+      15% {
+        bottom: 140px;
+      }
+      20% {
+        bottom: 200px;
+      }
+      25% {
+        bottom: 260px;
+      }
+      30% {
+        bottom: 340px;
+      }
+      35% {
+        bottom: 420px;
+      }
+      40% {
+        bottom: 400px;
+      }
+      45% {
+        bottom: 390px;
+      }
+      50% {
+        bottom: 380px;
+      }
+      55% {
+        bottom: 350px;
+      }
+      60% {
+        bottom: 320px;
+      }
+      65% {
+        bottom: 300px;
+      }
+      70% {
+        bottom: 280px;
+      }
+      75% {
+        bottom: 250px;
+      }
+      80% {
+        bottom: 220px;
+      }
+      85% {
+        bottom: 200px;
+      }
+      90% {
+        bottom: 180px;
+      }
+      95% {
+        bottom: 150px;
+      }
+      100% {
+        bottom: 10px;
+      }
+   
+      
     }
   </style>
 
@@ -133,8 +205,8 @@
   <div wm-super-mario>
     <div class="nuvens">
     </div>
-    <div class="">
-      <img class="personagem" src="./images/mario.gif" alt="">
+    <div class="personagem">
+  
     </div>
     <div class="barreira">
     </div>
