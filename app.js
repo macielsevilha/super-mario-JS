@@ -11,7 +11,6 @@ class AnimarItens {
     this.DESLOCAMENTO = DESLOCAMENTO
     this.elemento = elemento
   }
-
   getX() {
     let valor = this.elemento.style.left.split('px')[0]
     if (valor <= -4200) {
@@ -25,6 +24,12 @@ class AnimarItens {
       this.elemento.style.left = `${X}px`
     }, VELOCIDADE);
   }
+}
+class Barreira {
+   sortearAltura(elemento, abertura, altura) {
+    let resultado = Math.random() * (abertura - altura) + altura
+    elemento.style.height = `${resultado}px`
+   }
 }
 
 let criarJogo = new CriarJogo()
@@ -61,11 +66,14 @@ function barreiras() {
   elemento.appendChild(borda)
   elemento.appendChild(corpo)
 
-  let b_1 = new AnimarItens(3, elemento)
+  let b_1 = new AnimarItens(6, elemento)
 
   const PADRAO_LATERAL = 0
   b_1.setX(PADRAO_LATERAL, 0)
 
+  let barreira = new Barreira()
+
+  barreira.sortearAltura(corpo, 200, 300)
 }
 barreiras()
 function terraSuporte() {
@@ -123,6 +131,6 @@ function personagens() {
   PERSONAGEM.appendChild(elemento)
   window.addEventListener('keydown', evento)
 
-
 }
-personagens()
+personagens()  
+
